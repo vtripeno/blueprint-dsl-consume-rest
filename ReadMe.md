@@ -25,7 +25,7 @@ JBossFuse:karaf@root> osgi:install -s mvn:com.mycompany/camel-blueprint/1.0.0-SN
 Output Console --> Bundle ID: <ID>
 
 Pelo arquivo direto
-JBossFuse:karaf@root> osgi:install -s file:///home/rmzoni/dev/java-dsl-com-restlet/target/java-dsl-1.2-SNAPSHOT.jar
+JBossFuse:karaf@root> osgi:install -s file:///home/user/dev/camel-consumes-rest/target/camel-blueprint-consumo-SNAPSHOT.jar
 Output Console --> Bundle ID: <ID>
 
 ## Undeploy
