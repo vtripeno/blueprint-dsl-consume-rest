@@ -1,0 +1,72 @@
+<definitions name="PersonService"
+   targetNamespace="http://www.examples.com/wsdl/PersonService.wsdl"
+   xmlns="http://schemas.xmlsoap.org/wsdl/"
+   xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+   xmlns:tns="http://www.examples.com/wsdl/PersonService.wsdl"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+ 
+   <types>
+	  <schema targetNamespace="http://www.examples.com/wsdl/PersonService.wsdl"
+            xmlns="http://www.w3.org/2001/XMLSchema">
+		  <element name="person">
+			<complexType>
+				<sequence>
+					<element name="firstName" type="xsd:string" />
+					<element name="lastName" type="xsd:string"/>
+					<element name="age" type="xsd:integer"/>
+				</sequence>
+			</complexType>
+		  </element>
+		  <element name="documents">
+			<complexType>
+				<sequence>
+					<element name="cpf" type="xsd:string" />
+					<element name="rg" type="xsd:string"/>
+				</sequence>
+			</complexType>
+		  </element>
+		</schema>
+   </types>
+   <message name="personRequest">
+		<part name="person" element="tns:person"/>
+   </message>
+   <message name="personResponse">
+      <part name="person" element="tns:person"/>
+      <part name="documents" element="tns:documents"/>
+   </message>
+ 
+   <portType name="Person_PortType">
+      <operation name="person">
+         <input message="tns:personRequest"/>
+         <output message="tns:personResponse"/>
+      </operation>
+   </portType>
+ 
+   <binding name="Person_Binding" type="tns:Person_PortType">
+   <soap:binding style="document"
+      transport="http://schemas.xmlsoap.org/soap/http"/>
+   <operation name="person">
+      <soap:operation soapAction="person"/>
+      <input>
+         <soap:body
+            encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+            namespace="http://www.examples.com/wsdl/PersonService.wsdl"
+            use="literal"/>
+      </input>
+      <output>
+         <soap:body
+            encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+            namespace="http://www.examples.com/wsdl/PersonService.wsdl"
+            use="literal"/>
+      </output>
+   </operation>
+   </binding>
+ 
+   <service name="Person_Service">
+      <documentation>WSDL File for PersonService</documentation>
+      <port binding="tns:Person_Binding" name="Person_Port">
+         <soap:address
+            location="http://www.examples.com/Person/"/>
+      </port>
+   </service>
+</definitions>

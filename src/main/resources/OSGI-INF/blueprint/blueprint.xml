@@ -31,9 +31,11 @@
       While it is not required to assign id's to the <camelContext/> and <route/> elements, it is a good idea
       to set those for runtime management purposes (logging, JMX MBeans, ...)
     -->
-    <bean class="pacote.teste.rest.MyRouteBuilder" id="minhaRota"/>
+    <bean class="pacote.teste.rest.MyRestRouteBuilder" id="minhaRotaRest"/>
+    <bean class="pacote.teste.rest.MySoapRouteBuilder" id="minhaRotaSoap"/>
     <camelContext id="_context1" xmlns="http://camel.apache.org/schema/blueprint">
         <!-- <route id="_route1"/> -->
-        <routeBuilder ref="minhaRota"/>
+        <routeBuilder ref="minhaRotaRest"/>
+        <routeBuilder ref="minhaRotaSoap"/>
     </camelContext>
 </blueprint>

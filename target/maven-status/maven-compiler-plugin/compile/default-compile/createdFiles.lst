@@ -1,5 +1,11 @@
-pacote\teste\rest\MyRouteBuilder$1.class
-pacote\teste\rest\MyRouteBuilder$4.class
-pacote\teste\rest\MyRouteBuilder$3.class
-pacote\teste\rest\MyRouteBuilder$2.class
-pacote\teste\rest\MyRouteBuilder.class
+pacote\rest\MyRestRouteBuilder$2.class
+pacote\rest\MyRestRouteBuilder$3.class
+pacote\interfaces\IPerson.class
+pacote\rest\MySoapRouteBuilder$2.class
+pacote\apis\ServicePerson.class
+pacote\contracts\Person.class
+pacote\rest\MyRestRouteBuilder$4.class
+pacote\rest\MyRestRouteBuilder.class
+pacote\rest\MySoapRouteBuilder.class
+pacote\rest\MyRestRouteBuilder$1.class
+pacote\rest\MySoapRouteBuilder$1.class
