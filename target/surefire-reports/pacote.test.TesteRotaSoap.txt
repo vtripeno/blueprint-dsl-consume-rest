@@ -1,8 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: pacote.test.TesteRotaSoap
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.638 sec <<< FAILURE! - in pacote.test.TesteRotaSoap
-testFail(pacote.test.TesteRotaSoap)  Time elapsed: 0.387 sec  <<< FAILURE!
-java.lang.AssertionError: Assertion error at index 0 on mock mock://error with predicate: Simple: body contains com.sun.xml.internal.messaging.saaj.soap.ver1_1.Message1_1Impl@34b7ac2f evaluated as: com.sun.xml.internal.messaging.saaj.soap.ver1_1.Message1_1Impl@6e4784bc contains com.sun.xml.internal.messaging.saaj.soap.ver1_1.Message1_1Impl@34b7ac2f on Exchange[ID-NBALP070-54606-1490635814200-1-2]
-	at pacote.test.TesteRotaSoap.testFail(TesteRotaSoap.java:93)
-
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.36 sec - in pacote.test.TesteRotaSoap

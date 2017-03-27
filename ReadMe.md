@@ -25,7 +25,7 @@ JBossFuse:karaf@root> install -s mvn:org.apache.servicemix.bundle/org.apache.ser
 
 ## Deploy
 Por um aterfato do Maven
-JBossFuse:karaf@root> osgi:install -s mvn:com.mycompany/camel-blueprint/1.0.0-SNAPSHOT
+JBossFuse:karaf@root> osgi:install -s mvn:com.rest/camel-blueprint-consumo/1.0.0-SNAPSHOT
 Output Console --> Bundle ID: <ID>
 
 Pelo arquivo direto

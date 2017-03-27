@@ -13,7 +13,7 @@ import javax.xml.soap.SOAPPart;
 import pacote.contracts.Person;
 import pacote.interfaces.IPerson;
 
-@WebService(endpointInterface = "pacote.teste.interfaces.IPerson", name = "ServicePerson")
+@WebService(endpointInterface = "pacote.interfaces.IPerson", name = "ServicePerson")
 public class ServicePerson implements IPerson {
 
 	@Override

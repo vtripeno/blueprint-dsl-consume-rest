@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="pacote.test.TesteRotaSoap" time="0.638" tests="2" errors="0" skipped="0" failures="1">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="pacote.test.TesteRotaSoap" time="0.36" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_101\jre\bin"/>
@@ -44,7 +44,7 @@
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_101\jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean test"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean install -U"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="en"/>
     <property name="user.language.format" value="pt"/>
@@ -64,34 +64,5 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="testFail" classname="pacote.test.TesteRotaSoap" time="0.387">
-    <failure message="Assertion error at index 0 on mock mock://error with predicate: Simple: body contains com.sun.xml.internal.messaging.saaj.soap.ver1_1.Message1_1Impl@34b7ac2f evaluated as: com.sun.xml.internal.messaging.saaj.soap.ver1_1.Message1_1Impl@6e4784bc contains com.sun.xml.internal.messaging.saaj.soap.ver1_1.Message1_1Impl@34b7ac2f on Exchange[ID-NBALP070-54606-1490635814200-1-2]" type="java.lang.AssertionError">java.lang.AssertionError: Assertion error at index 0 on mock mock://error with predicate: Simple: body contains com.sun.xml.internal.messaging.saaj.soap.ver1_1.Message1_1Impl@34b7ac2f evaluated as: com.sun.xml.internal.messaging.saaj.soap.ver1_1.Message1_1Impl@6e4784bc contains com.sun.xml.internal.messaging.saaj.soap.ver1_1.Message1_1Impl@34b7ac2f on Exchange[ID-NBALP070-54606-1490635814200-1-2]
-	at pacote.test.TesteRotaSoap.testFail(TesteRotaSoap.java:93)
-</failure>
-    <system-out><![CDATA[[                          main] TesteRotaSoap                  INFO  ********************************************************************************
-[                          main] TesteRotaSoap                  INFO  Testing: testFail(pacote.test.TesteRotaSoap)
-[                          main] TesteRotaSoap                  INFO  ********************************************************************************
-[                          main] DefaultCamelContext            INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: camel-2) is starting
-[                          main] DefaultManagementStrategy      INFO  JMX is disabled
-[                          main] DefaultTypeConverter           INFO  Loaded 188 type converters
-[                          main] DefaultCamelContext            INFO  AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
-[                          main] DefaultCamelContext            INFO  StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
-[                          main] DefaultCamelContext            INFO  Route: route2 started and consuming from: Endpoint[direct://start]
-[                          main] DefaultCamelContext            INFO  Total 1 routes, of which 1 are started.
-[                          main] DefaultCamelContext            INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: camel-2) started in 0.298 seconds
-[                          main] MockEndpoint                   INFO  Asserting: Endpoint[mock://test] is satisfied
-[                          main] MockEndpoint                   INFO  Asserting: Endpoint[mock://error] is satisfied
-[                          main] TesteRotaSoap                  INFO  ********************************************************************************
-[                          main] TesteRotaSoap                  INFO  Testing done: testFail(pacote.test.TesteRotaSoap)
-[                          main] TesteRotaSoap                  INFO  Took: 0.077 seconds (77 millis)
-[                          main] TesteRotaSoap                  INFO  ********************************************************************************
-[                          main] DefaultCamelContext            INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: camel-2) is shutting down
-[                          main] DefaultShutdownStrategy        INFO  Starting to graceful shutdown 1 routes (timeout 10 seconds)
-[el-2) thread #1 - ShutdownTask] DefaultShutdownStrategy        INFO  Route: route2 shutdown complete, was consuming from: Endpoint[direct://start]
-[                          main] DefaultShutdownStrategy        INFO  Graceful shutdown of 1 routes completed in 0 seconds
-[                          main] DefaultCamelContext            INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: camel-2) uptime 0.379 seconds
-[                          main] DefaultCamelContext            INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: camel-2) is shutdown in 0.002 seconds
-]]></system-out>
-  </testcase>
-  <testcase name="testSuccess" classname="pacote.test.TesteRotaSoap" time="0.251"/>
+  <testcase name="testSuccess" classname="pacote.test.TesteRotaSoap" time="0.36"/>
 </testsuite>

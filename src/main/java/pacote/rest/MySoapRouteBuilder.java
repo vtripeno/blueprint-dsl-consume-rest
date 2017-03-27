@@ -16,7 +16,7 @@ public class MySoapRouteBuilder extends RouteBuilder {
 	public void configure() throws Exception {
 		// TODO Auto-generated method stub
 		
-//		SoapJaxbDataFormat soapDF = new SoapJaxbDataFormat("pacote.teste.contracts.Person.ServicePerson", new ServiceInterfaceStrategy(ServicePerson.class, true));
+//		SoapJaxbDataFormat soapDF = new SoapJaxbDataFormat("pacote.contracts.Person.ServicePerson", new ServiceInterfaceStrategy(ServicePerson.class, true));
 		
 		from("jetty:http://0.0.0.0:8980/ConsumoSoap/?matchOnUriPrefix=true")
 			.routeId("mySoapRoute")
@@ -38,7 +38,7 @@ public class MySoapRouteBuilder extends RouteBuilder {
 			.log("${body}")
 //			.marshal(soapDF)
 //			.marshal("soapjaxb")
-			.to("http:localhost:9999/PersonMock")
+			.to("http://localhost:9999/PersonMock")
 				.setBody(simple("${body}"))
 //			.log("Saída Body ${body}")
 			.process(new Processor() {
