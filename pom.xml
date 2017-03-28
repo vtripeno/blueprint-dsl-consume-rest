@@ -60,17 +60,20 @@
 			<artifactId>camel-test-blueprint</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>org.apache.camel</groupId>
-			<artifactId>camel-restlet</artifactId>
-			<version>2.18.3</version>
-			<!-- use the same version as your Camel core version -->
-		</dependency>
+		<!-- <dependency> <groupId>org.apache.camel</groupId> <artifactId>camel-restlet</artifactId> 
+			<version>2.18.3</version> use the same version as your Camel core version 
+			</dependency> -->
 		<!-- https://mvnrepository.com/artifact/javax.ws.rs/javax.ws.rs-api -->
 		<dependency>
 			<groupId>javax.ws.rs</groupId>
 			<artifactId>javax.ws.rs-api</artifactId>
 			<version>2.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-http</artifactId>
+			<version>${camel.version}</version>
+			<!-- use the same version as your Camel core version -->
 		</dependency>
 	</dependencies>
 	<repositories>

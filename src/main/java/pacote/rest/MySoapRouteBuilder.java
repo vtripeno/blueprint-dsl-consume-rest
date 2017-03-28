@@ -1,5 +1,7 @@
 package pacote.rest;
 
+import javax.xml.soap.SOAPMessage;
+
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
 import org.apache.camel.builder.RouteBuilder;
@@ -31,7 +33,8 @@ public class MySoapRouteBuilder extends RouteBuilder {
 					person.setLastName("TESTANDO");
 					person.setAge(4000);
 					
-					exchange.getOut().setBody(servicePerson.getPerson(person));
+					SOAPMessage soapMessage = servicePerson.getPerson(person);
+					exchange.getOut().setBody(soapMessage);
 				}
 			})
 			.log("Entrada Body ")
