@@ -1,12 +1,11 @@
 package pacote.rest;
 
+
 import javax.xml.soap.SOAPMessage;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
 import org.apache.camel.builder.RouteBuilder;
-//import org.apache.camel.dataformat.soap.SoapJaxbDataFormat;
-//import org.apache.camel.dataformat.soap.name.ServiceInterfaceStrategy;
 
 import pacote.apis.ServicePerson;
 import pacote.contracts.Person;
@@ -29,20 +28,36 @@ public class MySoapRouteBuilder extends RouteBuilder {
 					// TODO Auto-generated method stub
 					ServicePerson servicePerson = new ServicePerson();
 					Person person = new Person();
+					person.setId(1);
 					person.setFirstName("TESTE");
 					person.setLastName("TESTANDO");
 					person.setAge(4000);
 					
 					SOAPMessage soapMessage = servicePerson.getPerson(person);
+					
+//					ByteArrayOutputStream out = new ByteArrayOutputStream();
+//					soapMessage.writeTo(out);
+					
+					exchange.getOut().setHeader("caminho", exchange.getIn().getHeader(Exchange.HTTP_PATH, String.class));
 					exchange.getOut().setBody(soapMessage);
+//					exchange.getOut().setBody(out.toByteArray());
 				}
 			})
 			.log("Entrada Body ")
 			.log("${body}")
 //			.marshal(soapDF)
 //			.marshal("soapjaxb")
-			.to("http://localhost:9999/PersonMock")
-				.setBody(simple("${body}"))
+			.log("${header.caminho}")
+			.log("caminho")
+			.choice()
+				.when(header("caminho").isEqualTo("SOAP"))
+					.to("http://localhost:9999/PersonMock")
+						.setBody(simple("${body}"))	
+				.when(header("caminho").isEqualTo("Service"))	
+					.to("http://localhost:9001/MyWebService")
+						.setBody(simple("${body}"))
+			.end()
+			
 //			.log("Saída Body ${body}")
 			.process(new Processor() {
 				

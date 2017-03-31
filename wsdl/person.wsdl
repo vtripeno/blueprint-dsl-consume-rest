@@ -11,6 +11,7 @@
 		  <element name="person">
 			<complexType>
 				<sequence>
+					<element name="id" type="xsd:integer"/>
 					<element name="firstName" type="xsd:string" />
 					<element name="lastName" type="xsd:string"/>
 					<element name="age" type="xsd:integer"/>

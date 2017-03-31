@@ -29,12 +29,13 @@ public class ServiceResponsePerson implements IResponsePerson {
 			SOAPEnvelope envelope = soapPart.getEnvelope();
 			envelope.addNamespaceDeclaration("per", "http://www.examples.com/wsdl/PersonService.wsdl");
 			
-			Person person = popularPerson("Silvio", "Santos", 6000);
+			Person person = popularPerson(1, "Silvio", "Santos", 6000);
 			Documents document = popularDocuments("123.456.789-10", "12.345.678-X");
 			
 			SOAPBody soapBody = envelope.getBody();
 			QName bodyPerson = new QName("per:person");
 			
+			QName id = new QName("id");
 			QName firstName = new QName("firstName");
 			QName lastName = new QName("lastName");
 			QName age = new QName("age");
@@ -46,7 +47,9 @@ public class ServiceResponsePerson implements IResponsePerson {
 			
 			SOAPBodyElement soapBodyElementPerson = soapBody.addBodyElement(bodyPerson);
 			
-			SOAPElement soapElementPerson = soapBodyElementPerson.addChildElement(firstName);
+			SOAPElement soapElementPerson = soapBodyElementPerson.addChildElement(id);
+			soapBodyElementPerson.addTextNode(String.valueOf(id));
+			soapElementPerson = soapBodyElementPerson.addChildElement(firstName);
 			soapElementPerson.addTextNode(person.getFirstName());
 			soapElementPerson = soapBodyElementPerson.addChildElement(lastName);
 			soapElementPerson.addTextNode(person.getLastName());
@@ -71,9 +74,10 @@ public class ServiceResponsePerson implements IResponsePerson {
 		
 	}
 	
-	private Person popularPerson(String firstName, String lastName, Integer age) {
+	private Person popularPerson(Integer id, String firstName, String lastName, Integer age) {
 		Person person = new Person();
 		
+		person.setId(id);
 		person.setFirstName(firstName);
 		person.setLastName(lastName);
 		person.setAge(age);

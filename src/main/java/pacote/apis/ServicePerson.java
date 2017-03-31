@@ -29,13 +29,16 @@ public class ServicePerson implements IPerson {
 		SOAPBody soapBody = envelope.getBody();
 		QName bodyPerson = new QName("per:person");
 		
+		QName id = new QName("id");
 		QName firstName = new QName("firstName");
 		QName lastName = new QName("lastName");
 		QName age = new QName("age");
 		
 		SOAPBodyElement soapBodyElement = soapBody.addBodyElement(bodyPerson);
 		
-		SOAPElement soapElement = soapBodyElement.addChildElement(firstName);
+		SOAPElement soapElement = soapBodyElement.addChildElement(id);
+		soapElement.addTextNode(String.valueOf(person.getId()));
+		soapElement = soapBodyElement.addChildElement(firstName);
 		soapElement.addTextNode(person.getFirstName());
 		soapElement = soapBodyElement.addChildElement(lastName);
 		soapElement.addTextNode(person.getLastName());

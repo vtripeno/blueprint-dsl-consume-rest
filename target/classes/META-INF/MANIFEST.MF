@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1490808023584
-Build-Jdk: 1.8.0_102
+Bnd-LastModified: 1490966479666
+Build-Jdk: 1.8.0_101
 Built-By: victor.tripeno
 Bundle-Description: Empty Camel Blueprint Example
 Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.html
@@ -12,7 +12,7 @@ Created-By: Apache Maven Bundle Plugin
 Export-Package: pacote.apis;uses:="pacote.contracts,javax.jws,javax.xml.
  soap,javax.xml.namespace,pacote.interfaces";version="1.0.0.SNAPSHOT",pa
  cote.contracts;uses:="javax.xml.bind.annotation";version="1.0.0.SNAPSHO
- T",pacote.interfaces;uses:="javax.jws,pacote.contracts,javax.xml.soap";
+ T",pacote.interfaces;uses:="pacote.contracts,javax.jws,javax.xml.soap";
  version="1.0.0.SNAPSHOT",pacote.rest;uses:="org.apache.camel,org.apache
  .camel.builder,org.apache.camel.model,pacote.contracts,javax.xml.soap,p
  acote.apis";version="1.0.0.SNAPSHOT"

@@ -37,7 +37,7 @@ JBossFuse:karaf@root> osgi:uninstall <ID>
 ## Detalhes
 - Para consumir a aplicação com chamda da API é necessário fazer uma chamada no endereço http://localhost:8980/ConsumoRest/{param},
 sendo {param} o código do país a ser pesquisado, como por exemplo, bra - Brasil, col - Colombia;
-- Para consumir a aplicação com chamda de SOAP é necessário fazer uma chamada no endereço http://localhost:8980/ConsumoSoap;
+- Para consumir a aplicação com chamda de SOAP é necessário fazer uma chamada no endereço http://localhost:8980/ConsumoSoap/SOAP (para bater no serviço mockado no SOAPUI) ou http://localhost:8980/ConsumoSoap/SOAP (para bater no serviço que está mockado em outtro bundle no servidor);
 - Quando se trata de um consumo de SOAP, o servidor JBOSS possui um pequeno problema, pois o mesmo não possui as dependências necessárias para a execução de criação de mensagens SOAP, retornando o seguinte erro;
 	javax.xml.soap.SOAPException: Unable to create MessageFactory: Provider for javax.xml.soap.MessageFactory cannot be found;
 	- Ao procurar sobre o seguinte erro, foi possível encontrar no próprio site de respostas da Red Hat a seguinte resolução: 
